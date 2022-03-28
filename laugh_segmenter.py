@@ -46,6 +46,9 @@ def lowpass(sig, filter_order = 2, cutoff = 0.01):
     return(signal.filtfilt(B,A, sig))
 
 def get_laughter_instances(probs, threshold = 0.5, min_length = 0.2, fps=100.):
+    '''
+    Returns a list of tuples, each representing a laughter, in the form of `(start time in seconds, end time in seconds)`.
+    '''
     instances = []
     current_list = []
     for i in range(len(probs)):
